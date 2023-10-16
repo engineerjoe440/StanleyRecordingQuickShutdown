@@ -9,7 +9,10 @@ import subprocess
 import pulsectl
 
 def stop_easyeffects():
-    subprocess.run(["killall", "easyeffects"], check=True)
+    try:
+        subprocess.run(["killall", "easyeffects"], check=True)
+    except subprocess.CalledProcessError:
+        print("easyeffects already stopped.")
 
 def main():
     """Shut down Recording System."""
