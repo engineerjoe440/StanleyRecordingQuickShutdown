@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!./venv/bin/python3
 ################################################################################
 """
 Shut down and restore Audio PipeWire Configuration after a Recording Session.
@@ -24,5 +24,5 @@ def restore_audio_levels():
                 pulse.volume_set_all_chans(stream, 1)
 
 if __name__ == "__main__":
-    stop_easyeffects()
     restore_audio_levels()
+    stop_easyeffects()
